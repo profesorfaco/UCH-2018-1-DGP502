@@ -11,7 +11,7 @@ Seminario Gráfica Computacional I 2018, Primer Semestre → Clase 2 → Viernes
 
 [GeoJSON](http://geojson.org/) es un derivado de JSON, ampliamente utilizado en aplicaciones de cartografía en entornos web al permitir el intercambio de datos de manera rápida, ligera y sencilla. A diferencia de de otros estándares [SIG](https://es.wikipedia.org/wiki/Sistema_de_informaci%C3%B3n_geogr%C3%A1fica), no está desarrollado y mantenido por una organización oficial, sino que es mantenido por una comunidad de desarrolladores en Internet.
 
-Tanto JSON como GeoJSON pueden consultarse mediante [distintos lenguajes de programación](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/). En nuestro caso, que trabajamos con JavaScript,  escribimos:
+Tanto JSON como GeoJSON pueden consultarse con [diversos lenguajes de programación](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/). En nuestro caso, que trabajamos con JavaScript,  escribimos:
 
 ```var request = new XMLHttpRequest();
 request.open('GET', 'URI', true);
@@ -22,7 +22,7 @@ request.onload = function () {
 request.send();
 ```
 
-Lo que hacemos con este script es asignar a la **var**iable **data** el resultado de analizar el JSON o GeoJSON que encontramos en una [URI](https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme), de manera que, en lo que sigue, se pueda consultar a la **var**iable **data** como se consulta a cualquier [objeto en javascript](https://www.w3schools.com/js/js_objects.asp).
+Lo que hacemos con este script es asignar a la **var**iable **data** el resultado de analizar el JSON o GeoJSON en una [URI](https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme), de manera que, en lo que sigue, se pueda consultar a la **var**iable **data** como se consulta a cualquier [objeto en javascript](https://www.w3schools.com/js/js_objects.asp).
 
 En caso no tengas claro a qué nos referimos con **var**iable, podrías necesitar información básica sobre JavaScript. Para obtener esa información, se recomienda consultar: [JavaScript.com](https://www.javascript.com/learn/javascript/strings), [JavaScript for Beginner](http://xahlee.info/js/js_basics_index.html), [JavaScript Tutorial](https://www.w3schools.com/js/).
 
