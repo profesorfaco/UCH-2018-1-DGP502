@@ -23,3 +23,13 @@ request.send();
 ```
 
 Lo que hacemos con este script es asignar a la **var**iable **data** el resultado de analizar el JSON o GeoJSON que encontramos en una [URI](https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme), de manera que, en lo que sigue, se pueda consultar a la **var**iable **data** como se consulta a cualquier [objeto en javascript](https://www.w3schools.com/js/js_objects.asp).
+
+Para más información sobre JavaScript, se recomienda:
+
+- [JavaScript.com](https://www.javascript.com/learn/javascript/strings)
+
+- [Fundamentos de JavaScript](https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+
+- [JavaScript for Beginner](http://xahlee.info/js/js_basics_index.html)
+
+- [JavaScript Tutorial](https://www.w3schools.com/js/)
