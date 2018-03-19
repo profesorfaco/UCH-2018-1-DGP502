@@ -67,7 +67,7 @@ Luego, confiando en la red de entrega de contenidos (Bootstrap[CDN](https://es.w
 
 Entre las recién referidas, la clase más interesante es la de columnas (`class="col-…"`), en tanto ofrece varias opciones que  permiten indicar "cuántas columnas se toman" según el ancho del contenedor en la pantalla donde se visualiza el documento HTML. Las opciones se explican en [Grid System](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
 
-En la clase de hoy vamos a retomar el ejercicio de la clase anterior, para hacer ajustes sobre en JavaScript y también en su estructura (HTML) y presentación (CSS). Antes de terminar la clase, tienen que publicar su trabajo en [GitHub Pages](https://www.youtube.com/watch?v=bFVtrlyH-kc&feature=youtu.be). Lo que se publique será evaluado con nota (1,0 a 7,0).
+> En la clase de hoy vamos a retomar el ejercicio de la clase anterior, para hacer ajustes en la programación (JavaScript) y también en estructura (HTML) y presentación (CSS) de las páginas. Antes de terminar la clase, cada estudiante tiene que publicar su trabajo en [GitHub Pages](https://www.youtube.com/watch?v=bFVtrlyH-kc&feature=youtu.be). Lo que se publique será evaluado con nota (1,0 a 7,0).
 
 - - - - - 
 
