@@ -7,7 +7,7 @@ Seminario Gráfica Computacional I 2018, Primer Semestre → Clase 2 → Viernes
 
 #### Algunos apuntes:
 
-[JSON](https://www.json.org/json-es.html) (JavaScript Object Notation), que es un formato ligero de intercambio de datos. Debido a su amplia adopción como alternativa a [XML](https://es.wikipedia.org/wiki/Extensible_Markup_Language) (eXtensible Markup Language), se considera un formato de lenguaje independiente. Muchos datos son compartidos en JSON. Un par de ejemplos sencillos: [Number of People in Space](http://api.open-notify.org/astros.json), [Current Location of the International Space Station](http://api.open-notify.org/iss-now.json), [SWAPI - The Star Wars API](https://swapi.co/).
+[JSON](https://www.json.org/json-es.html) (JavaScript Object Notation), que es un formato ligero de intercambio de datos. Debido a su amplia adopción como alternativa a [XML](https://es.wikipedia.org/wiki/Extensible_Markup_Language) (eXtensible Markup Language), se considera un formato de lenguaje independiente. Muchos datos son compartidos en JSON. Un par de ejemplos sencillos: [Number of People in Space](http://api.open-notify.org/astros.json), [Current Location of the International Space Station](http://api.open-notify.org/iss-now.json), [SWAPI - The Star Wars API](https://swapi.co/api/people/1/?format=json).
 
 [GeoJSON](http://geojson.org/) es un derivado de JSON, ampliamente utilizado en aplicaciones de cartografía en entornos web al permitir el intercambio de datos de manera rápida, ligera y sencilla. A diferencia de de otros estándares [SIG](https://es.wikipedia.org/wiki/Sistema_de_informaci%C3%B3n_geogr%C3%A1fica), no está desarrollado y mantenido por una organización oficial, sino que es mantenido por una comunidad de desarrolladores en Internet.
 
