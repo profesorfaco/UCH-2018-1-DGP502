@@ -28,9 +28,9 @@ En caso no tengas claro a qué nos referimos con **var**iable, podrías necesita
 
 #### Bootstrap
 
-Si la [clase recién pasada](https://github.com/profesorfaco/dgp502_1/) pudimos meternos directamente a examinar JavaScript, fue porque pudimos saltarnos las complicaciones de definir una estructura (HTML) y su correspondiente presentación (CSS), porque nos aprovechamos de [Bootstrap](https://getbootstrap.com/), un kit de herramientas de código abierto para la implementación de diseño "[responsive](https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable)" y "[mobile-first](https://en.ryte.com/wiki/Mobile_First)" de sitios y aplicaciones web.
+Si en la [clase recién pasada](https://github.com/profesorfaco/dgp502_1/) pudimos meternos directamente a examinar JavaScript, fue porque pudimos saltarnos las complicaciones de definir una estructura (HTML) y su correspondiente presentación (CSS), porque nos aprovechamos de [Bootstrap](https://getbootstrap.com/), un kit de herramientas de código abierto para la implementación de diseño "[responsive](https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable)" y "[mobile-first](https://en.ryte.com/wiki/Mobile_First)" de sitios y aplicaciones web.
 
-Hay distintas maneras para comenzar a trabajar con Boostrap. Un grupo de opciones parten en su [descarga](https://getbootstrap.com/docs/4.0/getting-started/download/), pero una opción mucho más rápida es Bootstrap[CDN](https://es.wikipedia.org/wiki/Red_de_entrega_de_contenidos). Para usar esta última opción, el documento HTML debe verse, inicialmente, de la siguiente manera: 
+Hay distintas maneras de comenzar a trabajar con Boostrap. Un grupo de opciones parten en su [descarga](https://getbootstrap.com/docs/4.0/getting-started/download/), pero una opción mucho más rápida es Bootstrap[CDN](https://es.wikipedia.org/wiki/Red_de_entrega_de_contenidos). Para usar esta última opción, el documento HTML debe verse, inicialmente, de la siguiente manera: 
 
 ```
 <!doctype html>
