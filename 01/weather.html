@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>Seminario Gráfica Computacional I 2018, Primer Semestre → Clase 1 → Viernes 16 de marzo</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+  crossorigin=""></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,700" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 py-5">
+			<h1>Está raro el clima</h1>
+			<h2>En todo el mundo</h2>
+			<p>El <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a> me entrega el tiempo atmosférico actual de cualquier parte del mundo. Ese tiempo se puede consultar directamente, como un dato duro, gracias a una <a href="https://openweathermap.org/api" target="_blank">API</a>. Les recomiendo NO abusar del "refresh" de su página, porque cada vez que lo hagan la API va a contar y eventualmente se aburrirá de tanta consulta.</p>
+			<p>Para hacer una consulta específica corresponde ir a buscar un recursos particular, que se estructura de la siguiente manera:</p>
+			<pre><code>http://api.openweathermap.org/data/2.5/weather?q=CIUDAD&units=metric&appid=APIKey', true</code></pre>
+			<p>En el caso de que quiera preguntar por el tiempo en Tokio, tengo que escribir lo siguiente:</p>
+			<pre><code>http://api.openweathermap.org/data/2.5/weather?q=Tokyo&units=metric&appid=1111111111</code></pre>
+			<p>¿Cuál es el origen del dato? Si lo georreferenciamos, es:</p>
+			<div id="mapid" style="width: 400px;  height: 400px; margin-bottom: 20px;"></div>
+			<p>Un par de aclaraciones necesarias:</p>
+			<ul>
+			<li>El 1111111111 es el APIKey que te ofrece como ejemplo en <a href="http://openweathermap.org/appid">How to use API key in API call</a>. Para hacer la consulta yo estoy usando otra, y ustedes deben usar la suya propia.</li>
+			<li>En las instrucciones del uso de la API se recomienda que no uses nombre de ciudad, sino que te vayas a la segura con un código. Puedes encontrar <a href="http://bulk.openweathermap.org/sample/city.list.json.gz">un JSON de esos códigos por aquí</a> (por su peso está comprimido, como gz)</li>
+			</ul>
+		</div>
+		<div class="col-sm-12" style="border-top:1px solid #eee;">
+			<div class="row pt-3 pb-4 small">
+				<div class="col-sm-3">
+					<p><a href="index.html">Volver</a></p>
+				</div>
+				<div class="col-sm-9  text-right">
+					<p>Seminario Gráfica Computacional I 2018, Primer Semestre → Clase 1 → Viernes 16 de marzo</p>
+				</div>
+			</div>		
+		</div>
+	</div>
+</div>
+<script>
+var request = new XMLHttpRequest();
+request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=Tokyo&units=metric&appid=1111111111', true);
+request.onload = function () {
+  var data = JSON.parse(this.response);
+  var lat = data.coord.lat;
+  var lon = data.coord.lon;
+  var ciudad = data.name;
+  var humedad = data.main.humidity;
+  var temperatura = Math.round(data.main.temp);
+
+  console.log(data);
+  console.log(lat);
+  console.log(lon);
+  console.log(ciudad);
+  console.log(humedad + "%");
+  console.log(temperatura + "º C");
+  //mapa
+	var mymap = L.map('mapid').setView([lat, lon], 15);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 20,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+	L.marker([lat, lon]).addTo(mymap)
+	.bindPopup("<h5>"+ ciudad + "</h5><p>Hay " + temperatura + "ºC, con " + humedad + "% de humedad<p>").openPopup();
+}
+request.send();
+</script>
+</body>
+</html>
+

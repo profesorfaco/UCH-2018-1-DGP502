@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+<title>Primera</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+<script>
+// declaro una variable fuera de todo (preload, setup, draw, windowResized), de esa manera puedo usarla dentro de todo. Si la creo dentro de un contexto particular, funcionará allí no más. 
+
+var datos; 
+
+// 2º es asignarle a esa variable un contenido. Los datos en ese JSON son asignados en esta carga a la variable ya declarada.
+
+function preload(){
+  datos = loadJSON("https://raw.githubusercontent.com/profesorfaco/datos/master/supercampeones.json","json");
+} 
+
+// es recomendable tener un console.log en el setup, que te permita imprimir una única vez cómo queda la variable ya declarada, con datos ya asignados. Obviamente, para verla tienes que asomarte a la consola de Javascript de tu navegador. Chrome => Cmd + Alt + J
+
+function setup(){
+  var canvas = createCanvas(windowWidth,500);
+  canvas.position(0,0)
+  smooth();
+  noLoop();
+  noStroke();
+  console.log(datos);
+}
+
+function draw(){
+  background(210);
+  textSize(12);
+  textAlign(LEFT);
+  
+  for (var a = 0; a < 8; a++){
+    fill(0);    
+  	text(datos[a].club, 30, (height/8.9)*(a+1));
+  	var ultimo = datos[a].temporada_campeonato.length;
+  	for (var b = 0; b < ultimo; b++){
+  		fill(0,100);
+  		ellipse(
+  			map(datos[a].temporada_campeonato[b],1930,2020,180,width-50),
+			(height/9)*(a+1),
+			5,
+			5
+			)
+	 } 
+  }
+
+var years = [1930,1940,1950,1960,1970,1980,1990,2000,2010,2020];
+for (var x = 0; x < years.length; x++){
+	stroke(190);
+	var paralelas = map(years[x],1930,2020,180,width-50)
+	line(paralelas,0, paralelas, height-30);
+	textAlign(CENTER);
+	textSize(9);
+	text(years[x],paralelas,height-15);
+}
+
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, 500);
+}  
+</script>
+</body>
+</html>

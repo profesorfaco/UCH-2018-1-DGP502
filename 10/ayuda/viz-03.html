@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ejemplo</title>
+</head>
+
+<body>
+    <!--Nada más que p5.js para dibujar en el body de esta página-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+    <script>
+        var data;
+
+        function preload() {
+            data = loadJSON("https://raw.githubusercontent.com/profesorfaco/datos/master/femicidios_2017.json", "json");
+        }
+
+        function setup() {
+            var canvas = createCanvas(windowWidth, 500);
+            canvas.position(0, 0)
+            smooth();
+            noLoop();
+            print(data);
+        }
+
+        function draw() {
+            background(200);
+            for (var a = 0; a < 40; a++) {
+                var edad_victima = map(data[a].edad_victima, 0, 90, 0, width);
+                var edad_asesino = map(data[a].edad_asesino, 0, 90, 0, width);
+                var relacion = data[a].relacion_asesino_victima;
+                if (relacion.indexOf("ex") >= 0) {
+                    stroke(255, 0, 0);
+                } else {
+                    stroke(0);
+                }
+                line(edad_victima, (height / 3), edad_asesino, (height / 3) * 2);
+                noStroke();
+                textAlign(CENTER);
+                textSize(9);
+                fill(0,100);
+                text(data[a].edad_victima, edad_victima, (height / 3) - 5)
+                text(data[a].edad_asesino, edad_asesino, ((height / 3) * 2) + 10)
+            }
+                stroke(155);
+                line (0, height/3, width,height/3);
+                line (0, height/3*2, width,height/3*2);            
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, 500);
+        }
+    </script>
+</body>
+
+</html>

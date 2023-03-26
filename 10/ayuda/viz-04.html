@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Primera</title>
+</head>
+
+<body>
+    <!--Nada más que p5.js para dibujar en el body de esta página-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+    <script>
+        var data;
+
+        function preload(){
+          data = loadTable("https://raw.githubusercontent.com/profesorfaco/datos/master/crimenes-famicidas-2017.csv","csv","header");
+        }
+
+        function setup() {
+            var canvas = createCanvas(windowWidth, 500);
+            canvas.position(0, 0)
+            smooth();
+            noLoop();
+            print(data);
+            print(data.getRowCount());
+            noStroke();
+        }
+
+        function draw() {
+          background(155);
+            var edad = data.getRowCount();
+            for (var a = 0; a < edad; a++) {
+              var victimas = data.get(a, 1);
+              var victimario = data.get(a, 2);
+              if (victimas > 0){
+                fill(0);
+                textAlign(CENTER);
+                textSize(9);
+                text(".\n"+a,(width/edad)*a,height/3)
+              }
+              fill(255,map(victimas,0,10,75,150));
+              ellipse((width/edad)*a,height/3,2*(victimas+1),2*(victimas+1));
+
+              fill(255,map(victimario,0,10,75,150));
+              ellipse((width/edad)*a,(height/3)*2,2*(victimario+1),2*(victimario+1));
+              if (victimario > 0){
+                fill(0);
+                textAlign(CENTER);
+                textSize(9);
+                text(".\n"+a,(width/edad)*a,(height/3)*2)
+              }
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, 500);
+        }
+    </script>
+</body>
+
+</html>

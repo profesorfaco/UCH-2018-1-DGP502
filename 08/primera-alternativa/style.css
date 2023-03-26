@@ -1,0 +1,32 @@
+/* Esta es la partida, avancen un poco más */
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background: #F8F9FA;  
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.lead{
+  max-width: 40rem;
+}
