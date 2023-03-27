@@ -1,5 +1,7 @@
 Seminario Gráfica Computacional I 2018, Primer Semestre → Clase 1 → Viernes 16 de marzo
 
+https://profesorfaco.github.io/UCH-2018-1-DGP502/01/
+
 # Seminario Gráfica Computacional I (v.2018)
 
 ### Universidad de Chile → Diseño, mención Diseño Gráfico → Visualización de datos
