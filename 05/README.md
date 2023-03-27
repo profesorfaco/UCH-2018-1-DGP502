@@ -1,5 +1,7 @@
 Seminario Gráfica Computacional I 2018, Primer Semestre → Clase 5 → Viernes 20 de abril
 
+https://profesorfaco.github.io/UCH-2018-1-DGP502/05/
+
 # Seminario Gráfica Computacional I (v.2018)
 
 ### Visualización de datos
